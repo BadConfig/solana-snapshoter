@@ -9,7 +9,7 @@ use std::io::{Error, Write};
 async fn main() {
     let path = "./src/results.json";
     let data = fs::read_to_string(path).expect("Unable to read file");
-    let input: HashMap<String,String> = serde_json::from_str(&data).unwrap();
+    let input: HashMap<String,u64> = serde_json::from_str(&data).unwrap();
 
     let client = reqwest::Client::new();
 
